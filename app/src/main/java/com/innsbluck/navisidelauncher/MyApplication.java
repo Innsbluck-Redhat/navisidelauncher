@@ -2,6 +2,8 @@ package com.innsbluck.navisidelauncher;
 
 import android.app.Application;
 import android.content.Context;
+import com.innsbluck.navisidelauncher.preference.ActionsPref;
+import com.innsbluck.navisidelauncher.preference.SettingPref;
 import com.os.operando.garum.Configuration;
 import com.os.operando.garum.Garum;
 import com.os.operando.garum.models.PrefModel;

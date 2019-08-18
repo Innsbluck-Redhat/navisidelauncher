@@ -1,6 +1,4 @@
-package com.innsbluck.navisidelauncher;
-
-import com.google.gson.JsonElement;
+package com.innsbluck.navisidelauncher.data;
 
 import java.io.Serializable;
 

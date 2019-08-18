@@ -24,7 +24,7 @@
 
     </LinearLayout>
 
-    <com.innsbluck.navisidelauncher.NavTextView
+    <com.innsbluck.navisidelauncher.customview.NavTextView
             android:id="@+id/navTextView"
             android:layout_width="200dp"
             android:layout_height="wrap_content"

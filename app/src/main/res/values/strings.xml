@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">NaviSideLauncher</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="request_overlay_permission">「他のアプリに重ねて表示」の権限を許可してください。</string>
+
+    <string name="actions_list_hint">右上から追加、長押しで削除</string>
+    <string name="add_action">ADD ACTION</string>
+
+    <string name="start_service">START SERVICE</string>
+    <string name="stop_service">STOP SERVICE</string>
+    <string name="new_action_title">New Action</string>
+    <string name="new_action_package"></string>
+
+    <string name="action_no_title">none</string>
 </resources>

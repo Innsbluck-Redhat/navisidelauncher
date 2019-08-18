@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher;
+package com.innsbluck.navisidelauncher.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

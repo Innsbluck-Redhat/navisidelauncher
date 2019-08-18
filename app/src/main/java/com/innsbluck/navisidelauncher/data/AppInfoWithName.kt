@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.data
 
 import android.content.pm.ApplicationInfo
 

@@ -1,14 +1,14 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.adapter
 
 import android.content.Context
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.BaseAdapter
-import android.widget.ImageView
 import android.widget.TextView
+import com.innsbluck.navisidelauncher.R
+import com.innsbluck.navisidelauncher.data.Action
 
 
 class LauncherAdapter(val context: Context, var actions: ArrayList<Action>) : BaseAdapter() {
@@ -33,7 +33,12 @@ class LauncherAdapter(val context: Context, var actions: ArrayList<Action>) : Ba
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = layoutInflater.inflate(R.layout.launcher_item, parent, false) //表示するレイアウト取得
         val actionText = view.findViewById<TextView>(R.id.navTextView)
-        actionText.setShadowLayer(0.5f, 8f, 8f, ContextCompat.getColor(context, R.color.action_text_shadow))
+        actionText.setShadowLayer(
+            0.5f, 8f, 8f, ContextCompat.getColor(
+                context,
+                R.color.action_text_shadow
+            )
+        )
 
 
         val action = actions[position]

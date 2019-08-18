@@ -1,6 +1,6 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.activity
 
-import android.content.pm.ApplicationInfo
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.TextInputEditText
@@ -9,11 +9,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
 import android.widget.Button
-import android.content.pm.ResolveInfo
-import android.content.Intent
-import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashSet
+import com.innsbluck.navisidelauncher.R
+import com.innsbluck.navisidelauncher.adapter.ApplicationAdapter
+import com.innsbluck.navisidelauncher.data.Action
+import com.innsbluck.navisidelauncher.data.AppInfoWithName
+import com.innsbluck.navisidelauncher.preference.ActionsPref
 
 
 class ActionEditActivity : AppCompatActivity() {
@@ -45,7 +45,8 @@ class ActionEditActivity : AppCompatActivity() {
         titleEdit.requestFocus()
 
         saveButton.setOnClickListener {
-            val newAction = Action(titleEdit.text.toString(), packageEdit.text.toString())
+            val newAction =
+                Action(titleEdit.text.toString(), packageEdit.text.toString())
 
             val pref = ActionsPref()
             val actions = pref.actions
@@ -77,11 +78,13 @@ class ActionEditActivity : AppCompatActivity() {
         for (packageName in packageNames) {
             try {
                 val info = packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
-                appInfos.add(AppInfoWithName(
-                    info,
-                    packageManager.getApplicationLabel(info).toString(),
-                    packageName
-                ))
+                appInfos.add(
+                    AppInfoWithName(
+                        info,
+                        packageManager.getApplicationLabel(info).toString(),
+                        packageName
+                    )
+                )
             } catch (e: PackageManager.NameNotFoundException) {
             }
 

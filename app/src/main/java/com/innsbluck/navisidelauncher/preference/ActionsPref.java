@@ -1,8 +1,9 @@
-package com.innsbluck.navisidelauncher;
+package com.innsbluck.navisidelauncher.preference;
 
 import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.innsbluck.navisidelauncher.data.Action;
 import com.os.operando.garum.annotations.Pref;
 import com.os.operando.garum.annotations.PrefKey;
 import com.os.operando.garum.models.PrefModel;

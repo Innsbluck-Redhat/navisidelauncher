@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,10 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import com.innsbluck.navisidelauncher.R
+import com.innsbluck.navisidelauncher.preference.SettingPref
+import com.innsbluck.navisidelauncher.service.LauncherService
+import com.innsbluck.navisidelauncher.util.ServiceUtil
 
 class SettingFragment : Fragment() {
 

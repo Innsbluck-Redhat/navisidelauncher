@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher;
+package com.innsbluck.navisidelauncher.customview;
 
 import android.content.Context;
 import android.graphics.Typeface;

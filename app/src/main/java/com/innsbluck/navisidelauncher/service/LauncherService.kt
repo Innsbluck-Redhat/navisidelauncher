@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.service
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -18,6 +18,14 @@ import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.ListView
 import android.widget.Toast
+import com.innsbluck.navisidelauncher.R
+import com.innsbluck.navisidelauncher.adapter.LauncherAdapter
+import com.innsbluck.navisidelauncher.customview.DetectorView
+import com.innsbluck.navisidelauncher.data.Action
+import com.innsbluck.navisidelauncher.preference.ActionsPref
+import com.innsbluck.navisidelauncher.preference.SettingPref
+import com.innsbluck.navisidelauncher.util.DpUtil
+import com.innsbluck.navisidelauncher.util.ServiceUtil
 
 
 class LauncherService : Service() {
@@ -86,7 +94,12 @@ class LauncherService : Service() {
         }
 
         mShadowView = View(this)
-        mShadowView.setBackgroundColor(ContextCompat.getColor(this, R.color.launcher_background))
+        mShadowView.setBackgroundColor(
+            ContextCompat.getColor(
+                this,
+                R.color.launcher_background
+            )
+        )
         mShadowView.alpha = 0f
 
         mLauncherList = ListView(this)

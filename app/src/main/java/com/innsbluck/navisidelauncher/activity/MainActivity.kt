@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.activity
 
 import android.content.Intent
 import android.net.Uri
@@ -10,6 +10,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.Button
 import android.widget.Toast
+import com.innsbluck.navisidelauncher.R
+import com.innsbluck.navisidelauncher.adapter.ActionsAdapter
+import com.innsbluck.navisidelauncher.data.Action
+import com.innsbluck.navisidelauncher.fragment.SettingFragment
+import com.innsbluck.navisidelauncher.preference.ActionsPref
+import com.innsbluck.navisidelauncher.service.LauncherService
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,13 +29,16 @@ class MainActivity : AppCompatActivity() {
             startService(Intent(this, LauncherService::class.java))
         }
         val toggleButton: Button = findViewById(R.id.toggle_button)
-        toggleButton.text = if(LauncherService.isRunning(this)) "STOP SERVICE" else "START SERVICE"
+        toggleButton.setText(
+            if (LauncherService.isRunning(this)) R.string.start_service else R.string.stop_service
+        )
+
         toggleButton.setOnClickListener {
             if (LauncherService.isRunning(this)) {
-                toggleButton.text = "START SERVICE"
+                toggleButton.setText(R.string.start_service)
                 stopService(Intent(this, LauncherService::class.java))
             } else {
-                toggleButton.text = "STOP SERVICE"
+                toggleButton.setText(R.string.stop_service)
                 startService(Intent(this, LauncherService::class.java))
             }
         }
@@ -37,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         var actionsList: RecyclerView = findViewById(R.id.actionsList)
         val actionsPref = ActionsPref()
         if (actionsPref.actions == null) {
+            //デフォルトのアクション
             actionsPref.actions = arrayListOf(
                 Action("Twitter", "com.twitter.android"),
                 Action("Chrome", "com.android.chrome")
@@ -52,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         val newActionButton: Button = findViewById(R.id.new_action_button)
         newActionButton.setOnClickListener {
             val pref = ActionsPref()
-            pref.addAction(Action("New Action", ""))
+            pref.addAction(Action(getString(R.string.new_action_title), getString(R.string.new_action_package)))
             pref.save()
 
             mAdapter.setActions(pref.actions)
@@ -91,7 +101,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun requestOverlayPermission() {
-        Toast.makeText(this, "「他のアプリに重ねて表示」の権限を許可してください。", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, getString(R.string.request_overlay_permission), Toast.LENGTH_LONG).show()
 
         val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:${packageName}"))
         this.startActivityForResult(intent, REQUEST_SYSTEM_OVERLAY)

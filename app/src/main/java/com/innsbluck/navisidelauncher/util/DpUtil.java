@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher;
+package com.innsbluck.navisidelauncher.util;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

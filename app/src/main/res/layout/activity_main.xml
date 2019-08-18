@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".activity.MainActivity">
     <Button
             android:id="@+id/toggle_button"
             android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
             android:id="@+id/new_action_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ADD ACTION"
+            android:text="@string/add_action"
             android:textColor="@android:color/white"
             android:backgroundTint="@color/colorPrimary"
             app:layout_constraintRight_toRightOf="parent"
@@ -32,7 +32,7 @@
             app:layout_constraintTop_toBottomOf="@id/toggle_button" android:layout_marginTop="40dp"
             tools:layout_editor_absoluteX="0dp"/>
     <TextView
-            android:text="右上から追加、長押しで削除"
+            android:text="@string/actions_list_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"

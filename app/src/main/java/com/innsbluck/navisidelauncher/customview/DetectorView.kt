@@ -1,11 +1,10 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.customview
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
-import android.widget.RelativeLayout
 
 class DetectorView : View {
     private var mGestureDetector: GestureDetector? = null

@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.innsbluck.navisidelauncher.R
+import com.innsbluck.navisidelauncher.data.AppInfoWithName
 
 class ApplicationAdapter(val context: Context, val packages: MutableList<AppInfoWithName>) :
     RecyclerView.Adapter<ApplicationAdapter.ItemViewHolder>() {

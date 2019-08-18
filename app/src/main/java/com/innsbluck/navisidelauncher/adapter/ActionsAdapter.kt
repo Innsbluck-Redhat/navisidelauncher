@@ -1,4 +1,4 @@
-package com.innsbluck.navisidelauncher
+package com.innsbluck.navisidelauncher.adapter
 
 import android.app.ActivityManager
 import android.content.Context
@@ -8,6 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.innsbluck.navisidelauncher.R
+import com.innsbluck.navisidelauncher.activity.ActionEditActivity
+import com.innsbluck.navisidelauncher.data.Action
+import com.innsbluck.navisidelauncher.preference.ActionsPref
+import com.innsbluck.navisidelauncher.service.LauncherService
 import java.util.*
 
 class ActionsAdapter(val context: Context, private var actions: ArrayList<Action>) :
@@ -26,8 +31,8 @@ class ActionsAdapter(val context: Context, private var actions: ArrayList<Action
 
     override fun onBindViewHolder(viewHolder: ItemViewHolder, position: Int) {
         val action = actions.get(position)
-        val info = if (action.appPackage.isEmpty()) "none" else action.appPackage
-        viewHolder.actionText.text = action.title + "(" + info + ")"
+        val info = if (action.appPackage.isEmpty()) context.getString(R.string.action_no_title) else action.appPackage
+        viewHolder.actionText.text = action.title + "($info)"
 
         viewHolder.rootView.setOnClickListener {
             val intent = Intent(context, ActionEditActivity::class.java)
