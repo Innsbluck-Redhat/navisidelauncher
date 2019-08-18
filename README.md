@@ -7,4 +7,4 @@
 
 # ダウンロード
 
-[Download APK]:https://github.com/Innsbluck-rh/navisidelauncher/raw/master/app/release/app-release.apk
+[Download APK](https://github.com/Innsbluck-rh/navisidelauncher/raw/master/app/release/NaviSideLauncher-1.0.apk)
