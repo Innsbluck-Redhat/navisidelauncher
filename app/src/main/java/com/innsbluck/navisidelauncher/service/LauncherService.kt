@@ -43,7 +43,7 @@ class LauncherService : Service() {
 
     companion object {
         @JvmStatic
-        fun isRunning(context : Context): Boolean {
+        fun isRunning(context: Context): Boolean {
             return ServiceUtil.isRunning(context, LauncherService::class.java)
         }
     }
@@ -79,7 +79,8 @@ class LauncherService : Service() {
         val params = WindowManager.LayoutParams()
         params.width = 50
         params.height = WindowManager.LayoutParams.MATCH_PARENT
-        params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+        params.flags =
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
         params.format = PixelFormat.RGBA_8888
         params.gravity = Gravity.RIGHT or Gravity.BOTTOM
 
@@ -88,9 +89,9 @@ class LauncherService : Service() {
             launcherParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
             params.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
         } else {
-            shadowParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
-            launcherParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
-            params.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
+            shadowParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
+            launcherParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
+            params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
         }
 
         mShadowView = View(this)
@@ -163,6 +164,7 @@ class LauncherService : Service() {
         //mView?.setBackgroundColor(ContextCompat.getColor(this, R.color.detect_area))
         mView?.setOnTouchListener(OnTouchListener { view, event ->
             if (isAnimating) return@OnTouchListener false
+
             val absX = event.x + view.x
             val absY = event.y + view.y
             when (event.action) {
