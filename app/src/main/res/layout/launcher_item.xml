@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" xmlns:tools="http://schemas.android.com/tools"
+                android:layout_gravity="end"
+                android:gravity="end">
+
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:orientation="vertical" android:layout_alignTop="@id/navTextView"
+                  android:layout_gravity="bottom|end"
+                  android:layout_alignStart="@id/navTextView"
+                  android:layout_alignBottom="@id/navTextView">
+
+        <View android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1"/>
+
+        <ImageView
+                android:layout_width="210dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/rect4857"
+                android:scaleType="fitStart"
+                android:layout_marginBottom="12dp"
+                android:alpha="0.6"/>
+
+    </LinearLayout>
+
+    <com.innsbluck.navisidelauncher.NavTextView
+            android:id="@+id/navTextView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="56sp"
+            android:textColor="@color/action_text"
+            android:textScaleX="0.7"
+            android:letterSpacing="0"
+            android:lines="1"
+            android:ellipsize="end"
+            android:alpha="0.8"
+            android:paddingLeft="28dp"
+            android:paddingRight="16dp"
+            android:gravity="bottom"
+            android:layout_gravity="end|bottom"
+            android:layout_alignParentEnd="true"
+            tools:text="title"/>
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f5bff</color>
+    <color name="colorPrimaryDark">#1f3bff</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="detect_area">#5032a2a8</color>
+    <color name="launcher_background">#00000000</color>
+    <color name="action_text_shadow">#66000000</color>
+    <!--<color name="action_text">#3030FF</color>
+    <color name="action_background">#0000FF</color>-->
+    <color name="action_text">#0f2bff</color>
+    <color name="action_background">#0f2bff</color>
+</resources>
