@@ -28,9 +28,10 @@ class MainActivity : AppCompatActivity() {
         if (checkOverlayPermission() && !LauncherService.isRunning(this)) {
             startService(Intent(this, LauncherService::class.java))
         }
+
         val toggleButton: Button = findViewById(R.id.toggle_button)
         toggleButton.setText(
-            if (LauncherService.isRunning(this)) R.string.start_service else R.string.stop_service
+            if (LauncherService.isRunning(this)) R.string.stop_service else R.string.start_service
         )
 
         toggleButton.setOnClickListener {
